@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "support_chat": {
+      "messages": {
+        ".indexOn": ["timestamp"],
+        ".read": true,
+        ".write": true
+      }
+    }
+  }
+}
