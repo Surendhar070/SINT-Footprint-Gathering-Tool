@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support &amp; Chat | OSINT Footprint Gathering Tool</title>
+  <link rel="icon" type="image/png" href="logo/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo/logo.png" alt="OSINT Footprint Gathering Tool" />
+      OSINT Footprint Gathering Tool
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="support.html" class="active">Support &amp; Chat</a></li>
+      <li><a href="install.html">Install</a></li>
+      <li id="nav-login"><a href="login.html">Login</a></li>
+      <li id="nav-register"><a href="register.html">Register</a></li>
+      <li id="nav-logout-wrap" style="display:none"><span id="nav-user-email" class="nav-email"></span> <a href="#" id="nav-logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div id="auth-prompt-banner" class="auth-prompt-banner">
+    <span>Sign in for the best experience.</span>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <button type="button" class="banner-dismiss">Dismiss</button>
+  </div>
+
+  <main class="main">
+    <section class="hero">
+      <h1>Support &amp; Chat</h1>
+      <p>Get help, report issues, or chat with the community. Real-time support chat powered by Firebase.</p>
+    </section>
+
+    <div class="support-layout">
+      <div>
+        <h2 style="font-size:1.1rem; margin-bottom:0.5rem; color: var(--text);">Support &amp; FAQ</h2>
+        <div class="support-table-wrap">
+          <table>
+            <tbody>
+              <tr>
+                <th>Resources</th>
+                <td><a href="about.html">About</a> (features) &middot; <a href="downloads.html">Downloads</a> (setup)</td>
+              </tr>
+              <tr>
+                <th>Login</th>
+                <td>Use the same Firebase account as the desktop app.</td>
+              </tr>
+              <tr>
+                <th>Export</th>
+                <td>JSON, TXT, PDF and graph export in the tool.</td>
+              </tr>
+              <tr>
+                <th>Entity types</th>
+                <td>Domain, URL, Email, IP, Mobile, Person, Org, IOC.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-size:1.1rem; margin-bottom:0.5rem; color: var(--text);">Live Chat</h2>
+        <div class="chat-panel">
+          <div class="chat-header">Support Chat</div>
+          <div id="chat-messages" class="chat-messages"></div>
+          <form id="chat-form" class="chat-form">
+            <div class="chat-name-row">
+              <input type="text" id="chat-name" placeholder="Your name" maxlength="80" required>
+              <input type="email" id="chat-email" placeholder="Email (optional)" maxlength="120">
+            </div>
+            <input type="text" id="chat-input" placeholder="Type a message..." maxlength="2000" autocomplete="off" required>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>OSINT Footprint Gathering Tool &middot; <a href="support.html">Support</a> &middot; <a href="downloads.html">Downloads</a> &middot; <a href="install.html">Install</a></p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>

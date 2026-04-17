@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSINT Footprint Gathering Tool | Home</title>
+  <link rel="icon" type="image/png" href="logo/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo/logo.png" alt="OSINT Footprint Gathering Tool" />
+      OSINT Footprint Gathering Tool
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="support.html">Support &amp; Chat</a></li>
+      <li><a href="install.html">Install</a></li>
+      <li id="nav-login"><a href="login.html">Login</a></li>
+      <li id="nav-register"><a href="register.html">Register</a></li>
+      <li id="nav-logout-wrap" style="display:none"><span id="nav-user-email" class="nav-email"></span> <a href="#" id="nav-logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div id="auth-prompt-banner" class="auth-prompt-banner">
+    <span>Sign in for the best experience.</span>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <button type="button" class="banner-dismiss">Dismiss</button>
+  </div>
+
+  <main class="main">
+    <section class="hero">
+      <img src="logo/logo.png" alt="" class="hero-logo" />
+      <h1>OSINT Footprint Gathering Tool</h1>
+      <p>Comprehensive intelligence gathering platform for domains, URLs, emails, IPs, mobile numbers, persons, organizations, and threat intelligence. Analyze, visualize relationships, and export reports.</p>
+      <div class="mt-2">
+        <a href="downloads.html" class="btn btn-primary">Download for Windows</a>
+        <a href="about.html" class="btn btn-cyan" style="margin-left: 0.5rem;">Learn More</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Features</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Multi-Entity Support</td>
+              <td>Analyze domains, URLs, emails, IPs, mobile numbers, persons, organizations, and IOCs with a single tool.</td>
+            </tr>
+            <tr>
+              <td>Relationship Graph</td>
+              <td>Visualize connections between entities with interactive zoom, pan, and export.</td>
+            </tr>
+            <tr>
+              <td>Export &amp; Reports</td>
+              <td>Export results as JSON, TXT, or PDF. Save graph images for presentations.</td>
+            </tr>
+            <tr>
+              <td>Secure Authentication</td>
+              <td>Login and signup via Firebase. Protect your sessions and history.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Get Started</h2>
+      <p>Download the Windows installer, run the tool, sign in with your account, and start gathering intelligence. Select an entity type, enter your target, and run analysis.</p>
+      <p class="text-muted mt-1">Need help? Visit <a href="support.html" style="color: var(--accent-link);">Support &amp; Chat</a> for guidance.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>OSINT Footprint Gathering Tool &middot; <a href="support.html">Support</a> &middot; <a href="downloads.html">Downloads</a> &middot; <a href="install.html">Install</a></p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

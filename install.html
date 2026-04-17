@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installation Guide | OSINT Footprint Gathering Tool</title>
+  <link rel="icon" type="image/png" href="logo/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo/logo.png" alt="OSINT Footprint Gathering Tool" />
+      OSINT Footprint Gathering Tool
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="support.html">Support &amp; Chat</a></li>
+      <li><a href="install.html" class="active">Install</a></li>
+      <li id="nav-login"><a href="login.html">Login</a></li>
+      <li id="nav-register"><a href="register.html">Register</a></li>
+      <li id="nav-logout-wrap" style="display:none"><span id="nav-user-email" class="nav-email"></span> <a href="#" id="nav-logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div id="auth-prompt-banner" class="auth-prompt-banner">
+    <span>Sign in for the best experience.</span>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+    <button type="button" class="banner-dismiss">Dismiss</button>
+  </div>
+
+  <main class="main">
+    <section class="hero">
+      <h1>Installation Guide</h1>
+      <p>Install and run the OSINT Footprint Gathering Tool on Windows using <code>OSINT.exe</code>. Quick start and troubleshooting.</p>
+    </section>
+
+    <article class="install-doc">
+      <h2>Quick Start – Windows</h2>
+
+      <h3>Install the application</h3>
+      <ol>
+        <li><strong>Download <code>OSINT.exe</code></strong>
+          <ul>
+            <li>Go to the <a href="downloads.html">Downloads</a> page</li>
+            <li>Download <code>OSINT.exe</code> (or the setup installer ZIP)</li>
+          </ul>
+        </li>
+        <li><strong>Run the application</strong>
+          <ul>
+            <li>If you have <code>OSINT.exe</code>: double‑click to run. No installation needed.</li>
+            <li>If you have the installer ZIP: extract it, then run <code>OSINT.exe</code> from the extracted folder.</li>
+            <li>If you use a setup wizard (e.g. <code>OSINTTool_Setup_*.exe</code>): run it, follow the steps, then launch from Start Menu or Desktop shortcut.</li>
+          </ul>
+        </li>
+        <li><strong>Launch</strong>
+          <ul>
+            <li>Open <code>OSINT.exe</code> from your chosen folder, or use the Start Menu / Desktop shortcut if the installer created one.</li>
+          </ul>
+        </li>
+      </ol>
+      <p class="text-muted">Windows 10/11 (64‑bit) required. Internet connection needed for footprinting and Firebase login.</p>
+
+      <h2>Troubleshooting</h2>
+
+      <h3>DNS/Network Issues</h3>
+      <p><strong>Problem</strong>: Analysis fails with network errors</p>
+      <p><strong>Solution</strong>:</p>
+      <ul>
+        <li>Check internet connection</li>
+        <li>Verify firewall settings</li>
+        <li>Some corporate networks may block DNS queries</li>
+      </ul>
+
+      <h3>MTNL (Mahanagar Telephone Nigam Limited) Users</h3>
+      <p><strong>Problem</strong>: Tool fails with DNS/timeout errors, WHOIS lookup failures, or &quot;getaddrinfo failed&quot; on MTNL broadband</p>
+      <p><strong>Solution</strong>:</p>
+      <ul>
+        <li><strong>DNS</strong>: MTNL's default DNS can be slow or block some queries. Switch to public DNS:
+          <ul>
+            <li><strong>Google</strong>: <code>8.8.8.8</code>, <code>8.8.4.4</code></li>
+            <li><strong>Cloudflare</strong>: <code>1.1.1.1</code>, <code>1.0.0.1</code></li>
+            <li>Change in Windows: <strong>Settings</strong> → <strong>Network &amp; Internet</strong> → <strong>Ethernet/Wi‑Fi</strong> → <strong>Edit</strong> (DNS) → <strong>Manual</strong> → add the above.</li>
+          </ul>
+        </li>
+        <li><strong>Firewall</strong>: MTNL modems/routers may restrict outbound DNS or certain ports. Allow <code>OSINT.exe</code> (or the OSINT tool) in Windows Firewall.</li>
+        <li><strong>WHOIS</strong>: WHOIS over default MTNL routes can time out. Using the DNS change above often fixes it. The app also suppresses WHOIS console errors.</li>
+        <li><strong>Router</strong>: If issues persist, try rebooting the MTNL modem/router and re-running the tool.</li>
+      </ul>
+
+      <h2>System Requirements</h2>
+
+      <h3>Minimum Requirements</h3>
+      <ul>
+        <li>Windows 10 (64-bit)</li>
+        <li>100 MB free disk space</li>
+        <li>Internet connection</li>
+      </ul>
+
+      <h3>Recommended Requirements</h3>
+      <ul>
+        <li>Windows 11 (64-bit)</li>
+        <li>500 MB free disk space</li>
+        <li>Stable internet connection</li>
+        <li>4 GB RAM</li>
+      </ul>
+
+      <h2>Support</h2>
+      <p>For installation issues:</p>
+      <ol>
+        <li>Check the troubleshooting section above</li>
+        <li>Review error messages carefully</li>
+        <li>Contact us via the <a href="support.html">Support</a> page with:
+          <ul>
+            <li>Windows version</li>
+            <li>Complete error message</li>
+            <li>Steps to reproduce</li>
+          </ul>
+        </li>
+      </ol>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>OSINT Footprint Gathering Tool &middot; <a href="support.html">Support</a> &middot; <a href="downloads.html">Downloads</a> &middot; <a href="install.html">Install</a></p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

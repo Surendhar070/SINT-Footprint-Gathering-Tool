@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | OSINT Footprint Gathering Tool</title>
+  <link rel="icon" type="image/png" href="logo/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo/logo.png" alt="OSINT Footprint Gathering Tool" />
+      OSINT Footprint Gathering Tool
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="downloads.html">Downloads</a></li>
+      <li><a href="support.html">Support &amp; Chat</a></li>
+      <li><a href="install.html">Install</a></li>
+      <li id="nav-login"><a href="login.html">Login</a></li>
+      <li id="nav-register"><a href="register.html" class="active">Register</a></li>
+      <li id="nav-logout-wrap" style="display:none"><span id="nav-user-email" class="nav-email"></span> <a href="#" id="nav-logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <section class="hero">
+      <img src="logo/logo.png" alt="" class="hero-logo" />
+      <h1>Register</h1>
+      <p>Create a Firebase account to use the tool.</p>
+    </section>
+
+    <div class="auth-form-wrap">
+      <form id="register-form" class="auth-form">
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" required placeholder="you@example.com" autocomplete="email" />
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" required placeholder="••••••••" minlength="6" autocomplete="new-password" />
+        <label for="reg-confirm">Confirm password</label>
+        <input type="password" id="reg-confirm" required placeholder="••••••••" autocomplete="new-password" />
+        <p id="register-error" class="auth-error"></p>
+        <button type="submit" class="btn btn-primary">Create account</button>
+        <p class="auth-switch">Already have an account? <a href="login.html">Login</a></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>OSINT Footprint Gathering Tool &middot; <a href="support.html">Support</a> &middot; <a href="downloads.html">Downloads</a> &middot; <a href="install.html">Install</a></p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('register-form');
+      var email = document.getElementById('reg-email');
+      var pass = document.getElementById('reg-password');
+      var confirm = document.getElementById('reg-confirm');
+      var err = document.getElementById('register-error');
+      if (!form || !email || !pass || !confirm) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        err.textContent = '';
+        if (pass.value !== confirm.value) {
+          err.textContent = 'Passwords do not match';
+          return;
+        }
+        if (pass.value.length < 6) {
+          err.textContent = 'Password must be at least 6 characters';
+          return;
+        }
+        var btn = form.querySelector('button[type=submit]');
+        if (btn) { btn.disabled = true; btn.textContent = 'Creating account…'; }
+        firebase.auth().createUserWithEmailAndPassword(email.value.trim(), pass.value)
+          .then(function () { window.location.href = 'index.html'; })
+          .catch(function (e) {
+            err.textContent = e.message || 'Registration failed';
+            if (btn) { btn.disabled = false; btn.textContent = 'Create account'; }
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
