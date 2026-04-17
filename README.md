@@ -99,7 +99,7 @@ A modern, comprehensive GUI-based OSINT (Open Source Intelligence) tool for Wind
 
 3. **Run the application**
    ```bash
-   python main.py
+   python gui_app.py
    ```
 
 ### Option 2: Windows Installer
@@ -209,9 +209,6 @@ OSINT/
 - Verify DNS settings
 - Some DNS queries may be blocked by firewalls
 
-## 📝 License
-
-[Specify your license here]
 
 ## 🤝 Contributing
 
